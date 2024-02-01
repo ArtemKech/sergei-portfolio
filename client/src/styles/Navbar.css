@@ -1,0 +1,51 @@
+.navbar {
+  background-color: rgb(235, 234, 234);
+  padding: 20px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #000000;
+}
+
+/* Move "Сергей Фотограф" to the right */
+.logo {
+  margin-left: 30px;
+}
+
+.logo img {
+  display: block;
+  height: auto;
+}
+
+.nav-elements ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  max-height: 1000vh; /* Set max height */
+  overflow-y: auto; /* Enable vertical scrollbar if needed */
+}
+
+.nav-elements li {
+  margin-right: 70px;
+}
+
+.nav-elements a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 16px;
+}
