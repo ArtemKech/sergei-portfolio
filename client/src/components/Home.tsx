@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
+import Reviews from "./Reviews";
 import "../styles/Home.css";
+
 import photo_1 from "../assets/home/photo_1.jpg";
-import photo_2 from "../assets/home/photo_2.jpg";
-
 import profile_pic from "../assets/About/circle_prof_pic.jpg";
-
 import slider_1 from "../assets/home/slider_1.jpg";
 import slider_2 from "../assets/home/slider_2.jpg";
 import slider_3 from "../assets/home/slider_3.png";
 import slider_4 from "../assets/home/slider_4.jpg";
-
 import collage_1 from "../assets/home/collage_1.jpg";
 import collage_2 from "../assets/home/collage_2.jpg";
 import collage_3 from "../assets/home/collage_3.jpg";
@@ -21,7 +19,7 @@ import collage_7 from "../assets/home/collage_7.jpg";
 const Home: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [slider_1, slider_2, slider_3, slider_4]; // Add more images as needed
-
+  
   useEffect(() => {
     const textElement = document.querySelector(
       ".text_for_spiner"
@@ -32,7 +30,7 @@ const Home: React.FC = () => {
         .split("")
         .map(
           (char, i) =>
-            `<span style="transform:rotate(${i * 7.5}deg)">${char}</span>`
+            `<span style="transform:rotate(${i * 4.5}deg)">${char}</span>`
         )
         .join("");
 
@@ -57,7 +55,7 @@ const Home: React.FC = () => {
           <div>Привет, меня зовут Сергей</div>
           <div className="subtext">Ловлю моменты, создаю воспоминания</div>
         </div>
-        <img src={photo_1} alt="First Image" />
+        <img src={photo_1} alt={photo_1} />
       </div>
       <div className="bio">
         <div className="circle_spinner">
@@ -85,13 +83,8 @@ const Home: React.FC = () => {
           &rarr;
         </button>
       </div>
-      <p className="description_collage">
-        Тут должен быть долгий, длинющий, красивый текст про детские фотоссесии,
-        про то, как же было бы замечательно его купить, и что у нас есть
-        тематические фотографии, но так как я ничего не смог придумать - его нет
-        :)
-      </p>
-
+      <h2 className="description_collage">ОТЗЫВЫ ЗАКАЗЧИКОВ:</h2>
+      <Reviews />
       <div className="collage_container">
         {/* single image row */}
         <figure>
