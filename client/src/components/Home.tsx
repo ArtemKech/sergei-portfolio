@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Home.css";
 import photo_1 from "../assets/home/photo_1.jpg";
 import photo_2 from "../assets/home/photo_2.jpg";
@@ -18,9 +18,27 @@ import collage_5 from "../assets/home/collage_5.jpg";
 import collage_6 from "../assets/home/collage_6.jpg";
 import collage_7 from "../assets/home/collage_7.jpg";
 
-const Home = () => {
+const Home: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [slider_1, slider_2, slider_3, slider_4]; // Add more images as needed
+
+  useEffect(() => {
+    const textElement = document.querySelector(
+      ".text_for_spiner"
+    ) as HTMLElement;
+
+    if (textElement) {
+      const newText = textElement.innerText
+        .split("")
+        .map(
+          (char, i) =>
+            `<span style="transform:rotate(${i * 7.5}deg)">${char}</span>`
+        )
+        .join("");
+
+      textElement.innerHTML = newText;
+    }
+  }, []);
 
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -42,7 +60,11 @@ const Home = () => {
         <img src={photo_1} alt="First Image" />
       </div>
       <div className="bio">
-        <img className="circle_profile_pic" src={profile_pic}></img>
+        <div className="circle_spinner">
+          <img className="circle_profile_pic" src={profile_pic}></img>
+          <p className="text_for_spiner">20 • ЛЕТ • В • ФОТО • ИНДУСТРИИ •</p>
+        </div>
+
         <p className="description_line_profile_pic">
           "Добро пожаловать в мой мир, где каждый кадр - это история. Я,
           специализируюсь на школьных и детских фотосессиях, a также создании
@@ -69,6 +91,7 @@ const Home = () => {
         тематические фотографии, но так как я ничего не смог придумать - его нет
         :)
       </p>
+
       <div className="collage_container">
         {/* single image row */}
         <figure>

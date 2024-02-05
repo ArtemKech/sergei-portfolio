@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 70px; /* Adjust the value based on the height of your navbar */
+  padding-top: 70px;
 }
 
 .image_container_front img {
@@ -10,7 +10,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 2;
-  transition: filter 0.5s ease-in-out; /* Transition for a smooth effect */
+  transition: filter 0.5s ease-in-out;
 }
 
 .image_container_front {
@@ -18,7 +18,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 2;
-  transition: filter 0.5s ease-in-out; /* Transition for a smooth effect */
+  transition: filter 0.5s ease-in-out;
 }
 
 img {
@@ -26,15 +26,15 @@ img {
   height: 100%;
   object-fit: cover;
   z-index: 2;
-  transition: filter 0.5s ease-in-out; /* Transition for a smooth effect */
+  transition: filter 0.5s ease-in-out;
 }
 
 .image_container_front:hover img {
-  filter: brightness(45%); /* Adjust brightness to make the image darker */
+  filter: brightness(45%);
 }
 
 .image_container_front:hover .text_front_image {
-  opacity: 1; /* Opacity set to 1 on hover */
+  opacity: 1;
 }
 
 .text_front_image {
@@ -44,10 +44,10 @@ img {
   transform: translate(-50%, -50%);
   z-index: 3;
   color: white;
-  font-size: 70px; /* Adjust the font size to your preference */
+  font-size: 70px;
   text-align: center;
-  opacity: 0; /* Initial opacity set to 0 */
-  transition: opacity 0.5s ease-in-out; /* Transition for a smooth effect */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .description_line {
@@ -59,29 +59,68 @@ img {
 
 .subtext {
   font-size: 30px;
-  margin-top: 10px; /* Adjust as needed */
+  margin-top: 10px;
 }
 
 .bio {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5%;
+  padding: 4% 0%;
 }
 
 .description_line_profile_pic {
-  font-size: 26px;
+  font-size: 30px;
   max-width: 900px;
-  width: 60%; /* Adjust width as needed */
+  width: 55%;
   text-align: left;
   color: #000000;
 }
 
+.circle_spinner {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .circle_profile_pic {
+  position: absolute;
   width: 400px;
   height: 400px;
+  background-size: cover;
   border-radius: 50%;
-  overflow: hidden;
+  z-index: 1;
+}
+
+.text_for_spiner {
+  color: #000000;
+  font-size: 25px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotateText 35s linear infinite;
+  z-index: 2;
+}
+
+.text_for_spiner span {
+  position: absolute;
+  left: 50%;
+  transform-origin: 0 241px;
+  z-index: 0;
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .image_container {
@@ -89,14 +128,14 @@ img {
   height: 80vh;
   position: relative;
   overflow: hidden;
-  transition: transform 0.5s ease-in-out; /* Add transition property for smooth slide */
+  transition: transform 0.5s ease-in-out;
 }
 
 .image_container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease-in-out; /* Add transition property for smooth slide */
+  transition: transform 0.5s ease-in-out;
 }
 
 .image_container button {
@@ -128,15 +167,10 @@ img {
 .description_collage {
   font-size: 26px;
   max-width: 1000px;
-  width: 100%; /* Adjust width as needed */
+  width: 100%;
   text-align: left;
   color: #000000;
   padding: 5%;
-}
-
-.wrapper {
-  margin: 5em auto 0 auto;
-  max-width: 800px;
 }
 
 h1 {
@@ -146,7 +180,7 @@ h1 {
   color: #3c605d;
 }
 
-img {
+.circle_profile_pic {
   max-width: 100%;
   display: block;
 }
@@ -168,4 +202,24 @@ figure {
 .post-image:nth-last-child(n + 3):nth-last-child(-n + 3):first-child
   ~ .post-image {
   flex: 0 1 31%;
+}
+
+.post-image > img {
+  scale: 0.8;
+  opacity: 0;
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range-start: cover;
+  animation-range-end: 700px;
+}
+
+@keyframes fade-in {
+  from {
+    scale: 0.8;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
