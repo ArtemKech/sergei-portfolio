@@ -2,9 +2,12 @@ import React from "react";
 import "../styles/Reviews.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import user_pic from "../assets/Reviews/user_icon.png";
 
@@ -76,14 +79,14 @@ const Reviews: React.FC = () => {
     <>
       <div className="container_reviews">
         <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          navigation={true}
-          className="mySwiper"
+          autoplay={{ delay: 3000 }}
+          grabCursor={true}
+          spaceBetween={50}
+          slidesPerView={3}
+          loop={true}
+          modules={[Pagination, Navigation, Autoplay]}
+          className="swiper_container"
+          style={{height: "auto", width: "100%", userSelect: "none"}}
         >
           {reviews.map((review, index) => (
             <SwiperSlide key={index}>
@@ -98,7 +101,7 @@ const Reviews: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  <p>{review.text}</p>
+                  <p className="review_text">{review.text}</p>
                 </div>
                 <div className="rating">
                   {Array.from({ length: review.rating }, (_, i) => (
