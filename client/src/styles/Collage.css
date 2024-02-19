@@ -24,6 +24,11 @@
   animation-timeline: view();
   animation-range-start: cover;
   animation-range-end: 600px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  transition: filter 0.5s ease-in-out;
 }
 
 @keyframes fade-in {

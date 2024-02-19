@@ -1,15 +1,13 @@
 import React from "react";
-import "../styles/Reviews.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "../styles/Reviews.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
-
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-
 import user_pic from "../assets/Reviews/user_icon.png";
+import walter_white from "../assets/Reviews/walter_white.jpg";
 
 const Reviews: React.FC = () => {
   interface Review {
@@ -86,14 +84,16 @@ const Reviews: React.FC = () => {
           loop={true}
           modules={[Pagination, Navigation, Autoplay]}
           className="swiper_container"
-          style={{height: "auto", width: "100%", userSelect: "none"}}
+          style={{ height: "auto", width: "100%", userSelect: "none" }}
         >
           {reviews.map((review, index) => (
             <SwiperSlide key={index}>
               <div className="card">
                 <div className="cards_items">
                   <div className="info">
-                    <img src={user_pic} alt={review.name} />
+                    <div className="review_profile_pic">
+                      <img src={walter_white} alt={user_pic} />
+                    </div>
                     <div className="text_container">
                       <div className="name">{review.name}</div>
                       <div className="photoshoot_type">
