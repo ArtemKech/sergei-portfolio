@@ -118,7 +118,7 @@ img {
 
 @keyframes rotateText {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
 
   100% {
