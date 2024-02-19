@@ -5,14 +5,12 @@ import instagram from "../assets/Contact/instagram.svg";
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-        <p>This is the footer of the website.</p>
-        <div className="social-icons">
-          {/* Add Instagram SVG here */}
-          <img src={instagram} alt="Instagram" className="social-icon" />
-
-          {/* Add other social media icons as needed */}
-        </div>
-        <p>© 2022 Your Website. All rights reserved.</p>
+      <div className="footer_social_icons">
+        <img src={instagram} alt="Instagram" className="footer_social_inst" />
+      </div>
+      <p className="web_rights">
+        © 2024 Sergey's Photographer Website. All rights reserved.
+      </p>
     </footer>
   );
 };
