@@ -82,9 +82,14 @@ const Reviews: React.FC = () => {
           spaceBetween={50}
           slidesPerView={3}
           loop={true}
-          modules={[Pagination, Navigation, Autoplay]}
+          // modules={[Pagination, Navigation, Autoplay]}
           className="swiper_container"
-          style={{ height: "auto", width: "100%", userSelect: "none" }}
+          style={{
+            height: "auto",
+            width: "100%",
+            userSelect: "none",
+            minWidth: "100%",
+          }}
         >
           {reviews.map((review, index) => (
             <SwiperSlide key={index}>
