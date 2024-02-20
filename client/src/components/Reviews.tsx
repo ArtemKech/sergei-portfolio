@@ -82,7 +82,7 @@ const Reviews: React.FC = () => {
           spaceBetween={50}
           slidesPerView={3}
           loop={true}
-          // modules={[Pagination, Navigation, Autoplay]}
+          modules={[Pagination, Navigation, Autoplay]}
           className="swiper_container"
           style={{
             height: "auto",
