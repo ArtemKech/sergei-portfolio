@@ -20,14 +20,15 @@ const Footer: React.FC = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      // Checks if near the bottom of the page
-      if (scrollY + windowHeight >= documentHeight - 1200) {
+      if (scrollY + windowHeight >= documentHeight - 1500) {
         if (back_to_top) {
-          back_to_top.style.display = "block";
+          back_to_top.classList.add("show");
+          back_to_top.classList.remove("hide");
         }
       } else {
         if (back_to_top) {
-          back_to_top.style.display = "none";
+          back_to_top.classList.add("hide");
+          back_to_top.classList.remove("show");
         }
       }
     };
@@ -35,7 +36,7 @@ const Footer: React.FC = () => {
     back_to_top?.addEventListener("click", scrollToTop);
 
     return () => {
-      window.onscroll = null; // Remove the scroll event listener when the component unmounts
+      window.onscroll = null;
       back_to_top?.removeEventListener("click", scrollToTop);
     };
   }, []);
