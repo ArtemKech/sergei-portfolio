@@ -55,11 +55,11 @@
   font-size: 1.2vw;
   cursor: pointer;
   border: none;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .bring_to_top_button.show {
   opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .bring_to_top_button.hide {
