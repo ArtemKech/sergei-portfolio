@@ -19,7 +19,6 @@ const Footer: React.FC = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      // Check if near the bottom of the page
       if (scrollY + windowHeight >= documentHeight - 1500) {
         if (back_to_top) {
           back_to_top.classList.add("show");
@@ -35,7 +34,6 @@ const Footer: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Set initial state based on scroll position
     handleScroll();
 
     back_to_top?.addEventListener("click", scrollToTop);
