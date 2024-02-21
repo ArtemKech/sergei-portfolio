@@ -1,44 +1,36 @@
 .footer {
-  background-color: rgb(66, 66, 66);
-  color: white;
   display: flex;
   flex-direction: column;
+  border-top: 0.1vw solid rgb(0, 0, 0);
+  width: 95%;
+  margin: 0 auto;
 }
 
 .footer_social {
   display: flex;
-  flex-direction: column;
-  margin-left: 2.55%;
-  padding-top: 1%;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 8%;
+  margin-left: 9%;
 }
 
 .footer_social_inst,
-.footer_social_whatsapp{
+.footer_social_whatsapp,
+.footer_social_maps {
   display: flex;
   align-items: center;
 }
 
-.footer_social_inst {
-  padding: 1.2% 0;
-}
-
 .footer_social_inst li,
-.footer_social_whatsapp li {
-  padding-left: 1%;
+.footer_social_whatsapp li,
+.footer_social_maps li {
   list-style: none;
 }
 
-.footer_social_inst a,
-.footer_social_whatsapp a {
-  font-size: 1vw;
-  text-decoration: none;
-  color: white;
-}
-
 .footer_social_inst img,
-.footer_social_whatsapp img {
+.footer_social_whatsapp img,
+.footer_social_maps img {
   width: 1.6vw;
-  filter: brightness(0) invert(1) !important;
 }
 
 .footer_bottom {
@@ -46,14 +38,22 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid white;
   font-size: 0.8vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.address_footer {
-  margin-left: 2.55%;
-}
-
-.web_rights {
-  margin-right: 2.2%;
+.bring_to_top_button {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  display: none;
+  width: 4%;
+  height: 4vw;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
 }
