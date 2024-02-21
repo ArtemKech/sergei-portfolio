@@ -1,37 +1,59 @@
 .footer {
-  position: relative; /* Change to relative */
-  width: 100%;
-  min-height: 10vw; /* Use min-height to ensure it's at least 10vw tall */
-  background-color: rgb(51 51 51);
+  background-color: rgb(66, 66, 66);
   color: white;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer_social_icons {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.footer_social {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin-left: 2.55%;
+  padding-top: 1%;
+}
+
+.footer_social_inst,
+.footer_social_whatsapp{
+  display: flex;
   align-items: center;
-  width: 80%;
-  height: 80%;
 }
 
 .footer_social_inst {
-  position: absolute;
-  filter: invert(100%);
-  width: auto;
-  height: 40%;
+  padding: 1.2% 0;
+}
+
+.footer_social_inst li,
+.footer_social_whatsapp li {
+  padding-left: 1%;
+  list-style: none;
+}
+
+.footer_social_inst a,
+.footer_social_whatsapp a {
+  font-size: 1vw;
+  text-decoration: none;
+  color: white;
+}
+
+.footer_social_inst img,
+.footer_social_whatsapp img {
+  width: 1.6vw;
+  filter: brightness(0) invert(1) !important;
+}
+
+.footer_bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid white;
+  font-size: 0.8vw;
+}
+
+.address_footer {
+  margin-left: 2.55%;
 }
 
 .web_rights {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.8vw;
+  margin-right: 2.2%;
 }

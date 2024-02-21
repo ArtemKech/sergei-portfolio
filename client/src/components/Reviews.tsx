@@ -77,7 +77,7 @@ const Reviews: React.FC = () => {
     <>
       <div className="container_reviews">
         <Swiper
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 5000 }}
           grabCursor={true}
           spaceBetween={50}
           slidesPerView={3}
