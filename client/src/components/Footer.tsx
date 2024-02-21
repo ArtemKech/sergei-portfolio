@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
         className="bring_to_top_button"
         title="Go to top"
       >
-        &#8593;
+        ↑
       </button>
     </footer>
   );
