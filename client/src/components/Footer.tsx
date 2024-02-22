@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/Footer.css";
 import instagram from "../assets/Contact/instagram.svg";
 import whatsapp from "../assets/Contact/whatsapp.svg";
 import maps from "../assets/Contact/map.svg";
 
 const Footer: React.FC = () => {
+  const location = useLocation();
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const scrollPercentageThreshold = 60;
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -15,12 +18,20 @@ const Footer: React.FC = () => {
   };
 
   useEffect(() => {
+    setShowBackToTop(false);
+
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
+      const hasScrollbar = documentHeight > windowHeight;
 
-      setShowBackToTop(scrollY + windowHeight >= documentHeight - 1500);
+      const scrollPercentage =
+        ((scrollY + windowHeight) / documentHeight) * 100;
+
+      setShowBackToTop(
+        hasScrollbar && scrollPercentage >= scrollPercentageThreshold
+      );
     };
 
     handleScroll();
@@ -30,7 +41,7 @@ const Footer: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [location.pathname]);
 
   return (
     <footer className="footer">
@@ -73,7 +84,7 @@ const Footer: React.FC = () => {
         title="Go to top"
         onClick={scrollToTop}
       >
-        ↑
+        &#8593;
       </button>
     </footer>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/About.css";
 import prof_pic_nb from "../assets/About/pfptouse.png";
+
 const About: React.FC = () => {
   return (
     <div className="about_page">
@@ -18,7 +19,6 @@ const About: React.FC = () => {
             который выделяет мои работы среди других.
           </p>
         </div>
-
         <img src={prof_pic_nb} alt="pfp_nb" className="pfp_nb" />
       </div>
     </div>
