@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/Collage.css";
-import collage_1 from "../assets/home/collage_1.jpg";
-import collage_2 from "../assets/home/collage_2.jpg";
-import collage_3 from "../assets/home/collage_3.jpg";
-import collage_4 from "../assets/home/collage_4.jpg";
-import collage_5 from "../assets/home/collage_5.jpg";
-import collage_6 from "../assets/home/collage_6.jpg";
-import collage_7 from "../assets/home/collage_7.jpg";
+import collage_1 from "../assets/Home/collage_1.jpg";
+import collage_2 from "../assets/Home/collage_2.jpg";
+import collage_3 from "../assets/Home/collage_3.jpg";
+import collage_4 from "../assets/Home/collage_4.jpg";
+import collage_5 from "../assets/Home/collage_5.jpg";
+import collage_6 from "../assets/Home/collage_6.jpg";
+import collage_7 from "../assets/Home/collage_7.jpg";
 
 const Collage: React.FC = () => {
   return (

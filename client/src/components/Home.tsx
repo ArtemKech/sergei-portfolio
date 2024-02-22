@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import Reviews from "./Reviews";
 import Collage from "./Collage";
 import "../styles/Home.css";
-import photo_1 from "../assets/home/photo_1.jpg";
+import photo_1 from "../assets/Home/photo_1.jpg";
 import profile_pic from "../assets/About/circle_prof_pic.jpg";
-import slider_1 from "../assets/home/slider_1.jpg";
-import slider_2 from "../assets/home/slider_2.jpg";
-import slider_3 from "../assets/home/slider_3.png";
-import slider_4 from "../assets/home/slider_4.jpg";
+import slider_1 from "../assets/Home/slider_1.jpg";
+import slider_2 from "../assets/Home/slider_2.jpg";
+import slider_3 from "../assets/Home/slider_3.png";
+import slider_4 from "../assets/Home/slider_4.jpg";
 
 const Home: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

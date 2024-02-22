@@ -10,10 +10,17 @@ const Navbar: React.FC = () => {
         <div className="logo">
           <Link to="/">Сергей Фотограф</Link>
         </div>
+        {/* <div className="menu-icon">&#9776;</div> */}
         <div className="nav-elements">
           <ul>
             <li>
               <Link to="/about">ОБО МНЕ</Link>
+            </li>
+            <li>
+              <Link to="/contact">ПОРТФОЛИО</Link>
+            </li>
+            <li>
+              <Link to="/contact">ПРАЙС</Link>
             </li>
             <li>
               <Link to="/contact">СВЯЗАТЬСЯ</Link>
