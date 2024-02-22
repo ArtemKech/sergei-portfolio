@@ -1,46 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Footer.css";
 import instagram from "../assets/Contact/instagram.svg";
 import whatsapp from "../assets/Contact/whatsapp.svg";
 import maps from "../assets/Contact/map.svg";
 
 const Footer: React.FC = () => {
-  useEffect(() => {
-    const scrollToTop = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    };
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
-    const back_to_top = document.getElementById("back_to_top");
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      if (scrollY + windowHeight >= documentHeight - 1500) {
-        if (back_to_top) {
-          back_to_top.classList.add("show");
-          back_to_top.classList.remove("hide");
-        }
-      } else {
-        if (back_to_top) {
-          back_to_top.classList.add("hide");
-          back_to_top.classList.remove("show");
-        }
-      }
+      setShowBackToTop(scrollY + windowHeight >= documentHeight - 1500);
     };
-
-    window.addEventListener("scroll", handleScroll);
 
     handleScroll();
 
-    back_to_top?.addEventListener("click", scrollToTop);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      back_to_top?.removeEventListener("click", scrollToTop);
     };
   }, []);
 
@@ -77,8 +65,13 @@ const Footer: React.FC = () => {
       </div>
       <button
         id="back_to_top"
-        className="bring_to_top_button"
+        className={
+          showBackToTop
+            ? "bring_to_top_button show"
+            : "bring_to_top_button hide"
+        }
         title="Go to top"
+        onClick={scrollToTop}
       >
         ↑
       </button>
