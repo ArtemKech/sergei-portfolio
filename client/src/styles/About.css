@@ -9,9 +9,9 @@
 .main_bio {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  height: 93svh;
+  height: calc(100vh - 80px);
 }
 
 .intro {
@@ -28,7 +28,7 @@
 }
 
 .my_name span {
-  color: #6f8ea9;
+  color: #8ba6be;
 }
 
 .about_me_description {
@@ -40,4 +40,58 @@
 .pfp_nb {
   width: 30%;
   object-fit: cover;
+}
+
+.second_bio_container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+}
+
+.second_bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.second_bio_description {
+  font-size: 1.7vw;
+  width: 80%;
+}
+
+.second_bio_title {
+  font-size: 3vw;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.collage_for_2nd_bio {
+  display: flex;
+  flex-direction: row;
+  width: 300vw;
+}
+
+.first_bio_pic {
+  width: 45%;
+  object-fit: cover;
+}
+
+.collage_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.second_bio_pic,
+.third_bio_pic {
+  flex: 1;
+  object-fit: cover;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.third_bio_pic {
+  padding-top: 10px;
 }
