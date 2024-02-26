@@ -1,7 +1,7 @@
 .collage_sub_container {
-  margin-bottom: 1.8em;
+  margin-bottom: 1.5em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .post-image:nth-last-child(n + 2):nth-last-child(-n + 2):first-child,
@@ -19,7 +19,7 @@
 .post-image > img {
   scale: 0.8;
   opacity: 0;
-  animation: fade-in linear forwards;
+  animation: fade-in-collage linear forwards;
   animation-timeline: view();
   animation-range-start: cover;
   animation-range-end: 600px;
@@ -30,7 +30,7 @@
   transition: filter 0.5s ease-in-out;
 }
 
-@keyframes fade-in {
+@keyframes fade-in-collage {
   from {
     scale: 0.8;
     opacity: 0;
