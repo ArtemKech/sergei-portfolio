@@ -2,7 +2,7 @@
   background-color: rgb(235, 234, 234);
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; 
   width: 100%;
   z-index: 1000;
   padding: 20px;
@@ -11,12 +11,6 @@
 
 .navbar_top {
   background-color: rgb(235, 234, 234, 0);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 20px;
 }
 
 .container {
@@ -32,7 +26,7 @@
   color: #000000;
   transition: 0.3s ease-in-out;
 }
- 
+
 .logo-top a {
   text-decoration: none;
   font-size: 22px;
