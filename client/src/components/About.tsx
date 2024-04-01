@@ -10,11 +10,13 @@ const About: React.FC = () => {
   return (
     <div className="about_page">
       <div className="main_bio">
-        <div className="intro">
-          <h2 className="hello">Привет,</h2>
-          <h2 className="my_name">
-            меня зовут <span>Сергей</span>
-          </h2>
+        <div className="front_about_me_description">
+          <div className="intro">
+            <h2 className="hello">Привет,</h2>
+            <h2 className="my_name">
+              меня зовут <span>Сергей</span>
+            </h2>
+          </div>
           <p className="about_me_description">
             Занимаюсь фотографированием больше 20 лет, начав свой путь как
             хобби, которое постепенно переросло в профессиональную деятельность.

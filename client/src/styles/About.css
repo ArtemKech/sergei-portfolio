@@ -14,10 +14,17 @@
   height: calc(100vh - 80px);
 }
 
-.intro {
+.front_about_me_description {
   display: flex;
   flex-direction: column;
   width: 50%;
+  text-align: justify;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
   text-align: left;
   z-index: 1000;
 }
@@ -34,6 +41,7 @@
 
 .about_me_description {
   font-size: 1.4vw;
+  width: 83%;
 }
 
 .pfp_nb {
