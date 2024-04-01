@@ -4,6 +4,7 @@ import prof_pic_nb from "../assets/About/pfptouse.png";
 import first_pic_collage from "../assets/About/2nd_pic_collage.png";
 import second_pic_collage from "../assets/About/1st_pic_collage.png";
 import third_pic_collage from "../assets/About/3rd_pic_collage.png";
+import camera_icon from "../assets/About/camera_icon.svg";
 
 const About: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const About: React.FC = () => {
           </p>
         </div>
         <img src={prof_pic_nb} alt="pfp_nb" className="pfp_nb" />
+        <img src={camera_icon} alt="camera_icon" className="camera_icon" />
       </div>
       <div className="second_bio_container">
         <div className="second_bio">

@@ -19,6 +19,7 @@
   flex-direction: column;
   width: 50%;
   text-align: left;
+  z-index: 1000;
 }
 
 .hello,
@@ -38,6 +39,7 @@
 .pfp_nb {
   width: 30%;
   object-fit: cover;
+  z-index: 1000;
 }
 
 .second_bio_container {
@@ -92,4 +94,26 @@
 
 .third_bio_pic {
   padding-top: 10px;
+}
+
+.camera_icon {
+  position: absolute;
+  top: 7%;
+  height: 95vh;
+  filter: invert(78%);
+  z-index: 0;
+  opacity: 0;
+  animation: fade-in 2s forwards;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    right: 100%;
+  }
+  100% {
+    opacity: 1;
+    right: 0%;
+  }
 }
