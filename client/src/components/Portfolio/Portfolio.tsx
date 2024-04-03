@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../styles/Portfolio.css";
 import custom_photoshoot from "../../assets/Portfolio/MainSlider/custom_photoshoot.png";
 import group_photoshoot from "../../assets/Portfolio/MainSlider/group_photoshoot.png";
@@ -9,52 +9,53 @@ import school_photoshoot from "../../assets/Portfolio/MainSlider/school_photosho
 
 const Portfolio: React.FC = () => {
   const images = [
-    { name: "Custom", type: "web3 Developer", image: custom_photoshoot },
-    { name: "Group", type: "wordpress Developer", image: group_photoshoot },
-    { name: "School", type: "java Developer", image: school_photoshoot },
-    { name: "New Year", type: "web Developer", image: newyear_photoshoot },
-    { name: "Private", type: "php Developer", image: private_photoshoot },
-    { name: "Halloween", type: "seo Developer", image: halloween_photoshoot },
+    {
+      name: "Custom",
+      image: custom_photoshoot,
+      link: "/portfolio/custom_photoshoot",
+    },
+    {
+      name: "Group",
+      image: group_photoshoot,
+      link: "/portofolio/group_photoshoot",
+    },
+    {
+      name: "School",
+      image: school_photoshoot,
+      link: "/portfolio/school_photoshoot",
+    },
+    {
+      name: "New Year",
+      image: newyear_photoshoot,
+      link: "/portfolio/newyear_photoshoot",
+    },
+    {
+      name: "Private",
+      image: private_photoshoot,
+      link: "/portfolio/private_photoshoot",
+    },
+    {
+      name: "Halloween",
+      image: halloween_photoshoot,
+      link: "/portfolio/halloween_photoshoot",
+    },
   ];
 
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const handleImageClick = (index: number) => {
-    setActiveIndex(index === activeIndex ? null : index);
-  };
-
   return (
-    <div className="portfolio_container">
-      <section className="slider_container_portfolio">
-        <div className="slider_portfolio_images">
-          {images.map((item, index) => (
-            <div
-              key={index}
-              className={`slider_img_portfolio ${
-                activeIndex === index ? "active" : ""
-              }`}
-              onClick={() => handleImageClick(index)}
-            >
+    <div>
+      <ul className="port_container">
+        {images.map((item, index) => (
+          <li key={index} className="port_section">
+            <a href={item.link} className="port_section_link">
               <img
                 src={item.image}
                 alt={item.name}
-                className={activeIndex === index ? "active" : ""}
+                className="port_section_pic"
               />
-              <h1
-                className={`section_details_portfolio_h1 ${
-                  activeIndex === index ? "active" : ""
-                }`}
-              >
-                {item.name}
-              </h1>
-              <div className="section_details_portfolio">
-                <h2 className="section_details_portfolio_h2">{item.name}</h2>
-                <p>{item.type}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
