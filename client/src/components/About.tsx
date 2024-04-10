@@ -1,12 +1,53 @@
 import React from "react";
 import "../styles/About.css";
 import prof_pic_nb from "../assets/About/pfptouse.png";
-import first_pic_collage from "../assets/About/2nd_pic_collage.png";
-import second_pic_collage from "../assets/About/1st_pic_collage.png";
-import third_pic_collage from "../assets/About/3rd_pic_collage.png";
 import camera_icon from "../assets/About/camera_icon.svg";
 
 const About: React.FC = () => {
+  interface RoadMap {
+    header: string;
+    location: string;
+    description: string;
+    date: Date;
+  }
+  const roadMap: RoadMap[] = [
+    {
+      header: "Первые шаги",
+      location: "Пятигорск, Россия",
+      description:
+        "Мои первые шаги в фотографии я начал в 2000 году, когда мне подарили первую камеру. С тех пор я начал изучать технику съемки, композицию и обработку фотографий. Так же я начал участвовать в различных фотоконкурсах и выставках. И хотя мои работы не всегда побеждали, я продолжал учиться и развиваться. Это стало основой для моего долгого и интересного пути в мире фотографии.",
+      date: new Date(2000, 1, 1),
+    },
+    {
+      header: "Первые работы",
+      location: "Москва, Россия",
+      description:
+        "В 2005 году я начал делать первые работы на заказ. Это были фотосессии для друзей и знакомых, а также фотографии на свадьбы и праздники. Этот период моей деятельности позволил мне набраться опыта и уверенности в своих силах.",
+      date: new Date(2005, 1, 1),
+    },
+    {
+      header: "Профессиональная деятельность",
+      location: "Окленд, Новая Зеландия",
+      description:
+        "В 2010 году я начал работать фотографом в профессиональной студии. За это время я сделал множество фотосессий для различных клиентов и сотрудничал с различными изданиями. Полученный опыт позволил мне развивать свое мастерство и улучшать качество своих работ.",
+      date: new Date(2010, 1, 1),
+    },
+    {
+      header: "Собственная студия",
+      location: "Владивосток, Россия",
+      description:
+        "В 2015 году я открыл свою собственную студию. За это время я сделал множество фотосессий для различных клиентов и сотрудничал с различными изданиями. Открытие собственной студии стало для меня важным шагом в развитии своего бизнеса и укреплению своего имени в мире фотографии.",
+      date: new Date(2015, 1, 1),
+    },
+    {
+      header: "Данный момент",
+      location: "Владивосток, Россия",
+      description:
+        "Сегодня я продолжаю заниматься фотографией и развиваться в этом направлении. Моя работа приносит мне удовольствие и радость, и я надеюсь, что она приносит радость и моим клиентам. Благодаря накопленному опыту и постоянному стремлению к совершенствованию, я продолжаю улучшать свои навыки и создавать качественные фотографии.",
+      date: new Date(),
+    },
+  ];
+
   return (
     <div className="about_page">
       <div className="main_bio">
@@ -28,40 +69,20 @@ const About: React.FC = () => {
         <img src={prof_pic_nb} alt="pfp_nb" className="pfp_nb" />
         <img src={camera_icon} alt="camera_icon" className="camera_icon" />
       </div>
-      <div className="second_bio_container">
-        <div className="second_bio">
-          <h2 className="second_bio_title">Моя история</h2>
-          <p className="second_bio_description">
-            Вырос в городе Москва, где и начал свою карьеру фотографа. Мои
-            работы были опубликованы в различных журналах и книгах, а также
-            использовались в рекламных кампаниях и на обложках альбомов. В
-            настоящее время я работаю в различных жанрах, таких как портретная,
-            свадебная, репортажная и архитектурная фотография. Мои работы
-            отличаются своей яркостью и оригинальностью, а также тем, что они
-            всегда передают атмосферу момента, который является ключевым в моей
-            работе.
-          </p>
-        </div>
-        <div className="collage_for_2nd_bio">
-          <img
-            src={first_pic_collage}
-            alt="1st_pic"
-            className="first_bio_pic"
-          ></img>
-          <div className="collage_column">
-            <img
-              src={second_pic_collage}
-              alt="2nd_pic"
-              className="second_bio_pic"
-            ></img>
-            <img
-              src={third_pic_collage}
-              alt="3rd_pic"
-              className="third_bio_pic"
-            ></img>
-          </div>
-        </div>
-      </div>
+      <article className="roadmap_container">
+        {roadMap.map((item, index) => {
+          return (
+            <ul className="roadmap_item" key={index}>
+              <div className="roadmap_header">
+                <h3>{item.header}</h3>
+                <p>{item.date.toLocaleDateString()}</p>
+              </div>
+              <h4>{item.location}</h4>
+              <p>{item.description}</p>
+            </ul>
+          );
+        })}
+      </article>
     </div>
   );
 };

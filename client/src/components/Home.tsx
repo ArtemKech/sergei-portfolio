@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Reviews from "./Reviews";
 import Collage from "./Collage";
-import TextAppear from "./TextAppear";
+import TextAppear from "./Animations/TextAppear";
 import photo_1 from "../assets/Home/photo_1.jpg";
 import profile_pic from "../assets/About/circle_prof_pic.jpg";
 import slider_1 from "../assets/Home/slider_1.jpg";
