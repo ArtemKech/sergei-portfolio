@@ -69,7 +69,7 @@
 }
 
 .port_section:hover .port_section_description {
-  transition: opacity 1s ease 0.3s;
+  transition: opacity 1s ease 0.5s;
   opacity: 1;
 }
 
