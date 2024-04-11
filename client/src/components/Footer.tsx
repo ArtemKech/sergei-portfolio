@@ -8,7 +8,6 @@ import maps from "../assets/Contact/map.svg";
 const Footer: React.FC = () => {
   const location = useLocation();
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const scrollPercentageThreshold = 60;
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -18,23 +17,10 @@ const Footer: React.FC = () => {
   };
 
   useEffect(() => {
-    setShowBackToTop(false);
-
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const hasScrollbar = documentHeight > windowHeight;
-
-      const scrollPercentage =
-        ((scrollY + windowHeight) / documentHeight) * 100;
-
-      setShowBackToTop(
-        hasScrollbar && scrollPercentage >= scrollPercentageThreshold
-      );
+      const at_top = window.scrollY !== 0;
+      setShowBackToTop(at_top);
     };
-
-    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
