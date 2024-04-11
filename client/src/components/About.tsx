@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/About.css";
-import prof_pic_nb from "../assets/About/pfptouse.png";
+import prof_pic_nb from "../assets/About/pfptousenew.png";
 import camera_icon from "../assets/About/camera_icon.svg";
 
 const About: React.FC = () => {
