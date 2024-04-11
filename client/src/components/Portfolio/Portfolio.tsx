@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../../styles/Portfolio.css";
 import custom_photoshoot from "../../assets/Portfolio/MainSlider/custom_photoshoot.png";
 import group_photoshoot from "../../assets/Portfolio/MainSlider/group_photoshoot.png";
@@ -59,13 +60,65 @@ const Portfolio: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    const portSections = document.querySelectorAll(".port_section");
+
+    portSections.forEach((section) => {
+      section.addEventListener("mouseover", () => {
+        const name = section.querySelector(".port_section_name");
+        if (name instanceof HTMLElement) {
+          name.style.fontSize = "1vw";
+        }
+
+        let prevSibling = section.previousElementSibling;
+        while (prevSibling) {
+          const prevName = prevSibling.querySelector(".port_section_name");
+          if (prevName instanceof HTMLElement) {
+            prevName.style.fontSize = "1vw";
+          }
+          prevSibling = prevSibling.previousElementSibling;
+        }
+
+        let nextSibling = section.nextElementSibling;
+        while (nextSibling) {
+          const nextName = nextSibling.querySelector(".port_section_name");
+          if (nextName instanceof HTMLElement) {
+            nextName.style.fontSize = "1vw";
+          }
+          nextSibling = nextSibling.nextElementSibling;
+        }
+      });
+
+      section.addEventListener("mouseout", () => {
+        portSections.forEach((sibling) => {
+          const name = sibling.querySelector(".port_section_name");
+          if (name instanceof HTMLElement) {
+            name.style.fontSize = "";
+          }
+        });
+      });
+    });
+
+    return () => {
+      portSections.forEach((section) => {
+        section.removeEventListener("mouseover", () => {});
+        section.removeEventListener("mouseout", () => {});
+      });
+    };
+  }, []);
+
   return (
     <div className="port_container">
       {images.map((item, index) => (
         <div key={index} className="port_section">
           <img src={item.image} alt={item.name} className="port_section_pic" />
           <span className="port_section_name">{item.name}</span>
-          <div className="port_section_description">{item.description}</div>
+          <div className="port_section_description">
+            {item.description}
+            <Link to={item.link} className="port_section_button">
+              <span>Посмотреть</span>
+            </Link>
+          </div>
         </div>
       ))}
     </div>
