@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/Portfolio.css";
+import "../../styles/Portfolio/Portfolio.css";
 import custom_photoshoot from "../../assets/Portfolio/MainSlider/custom_photoshoot.png";
 import group_photoshoot from "../../assets/Portfolio/MainSlider/group_photoshoot.png";
 import halloween_photoshoot from "../../assets/Portfolio/MainSlider/halloween_photoshoot.png";

@@ -19,6 +19,7 @@
   flex-direction: column;
   width: 50%;
   text-align: justify;
+  z-index: 1000;
 }
 
 .intro {
@@ -41,7 +42,7 @@
 
 .about_me_description {
   font-size: 1.4vw;
-  width: 83%;
+  width: 86%;
 }
 
 .pfp_nb {
