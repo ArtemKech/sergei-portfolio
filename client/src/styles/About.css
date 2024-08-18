@@ -48,7 +48,7 @@
 .pfp_nb {
   width: 30vw;
   object-fit: cover;
-  z-index: 1000;
+  z-index: 900;
 }
 
 .camera_icon {

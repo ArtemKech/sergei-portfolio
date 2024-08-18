@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import "../../styles/Portfolio/CollagePortfolio.css";
+import Modal from "./Modal";
+
 const CollagePortfolio: React.FC = () => {
-  const images = [
+  const images: string[] = [
     "https://downloader.disk.yandex.ru/preview/b7b230700b2d58e0b411015c5bf510deaeb1c1c1e629ea07464d77a5fed54ddc/66c0d8f8/emSg3_2wSSlFXwDmpmVv4hA_HiaeO-twHu4lXOxTm4QYRgjc6WsuUbITCMrYjE_erMYMXsB2J9rN5pGhNrHiBQ%3D%3D?uid=0&filename=SNK01004.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=1474x950",
     "https://downloader.disk.yandex.ru/preview/d5b9e19193335f780971cda38671f69df037c37a03250209a452a1de03619534/66c0d8f8/L7nqhavieftm6sM_HTyxg615t7rPgjuQkXXidnwhoW9YU3DEZDNmnBfQEcTIBfj8-N0Ao4-5YtPpI1YqcI7p7w%3D%3D?uid=0&filename=SNK01008.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=1474x950",
     "https://downloader.disk.yandex.ru/preview/ad2cd6417c6a4fa9b7367c57ecc708dbf63b9b6dfc027899b62dcb05c4e1aad6/66c0d8f8/eatCyn3YfBU5hAg6xYlNcpUv4yGyJgRISobKGlEL6LmJyOz3HcVfz3oPQGHmmCdRIa_20z_bU4XsvTBFia7J1A%3D%3D?uid=0&filename=SNK01010.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=1474x950",
@@ -18,6 +19,18 @@ const CollagePortfolio: React.FC = () => {
     "https://downloader.disk.yandex.ru/preview/0aab0cd1b5a2c766e3bf1dd689e191d1fd49f6367f5f4ab3a955e6eab04ca880/66c0d8f8/q4tF9qL4jasrDr9GpYO62-O0UsoSKS64_0A8Q2LIdJt5qVtOqHsXDYNTQUXfQw9dUX_8C5pNlxS82DO4Il8lPQ%3D%3D?uid=0&filename=SNK01002.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=1474x950",
   ];
 
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const openModal = (src: string) => {
+    document.body.classList.add("no-scroll");
+    setSelectedImage(src);
+  };
+
+  const closeModal = () => {
+    document.body.classList.remove("no-scroll");
+    setSelectedImage(null);
+  };
+
   return (
     <div className="wrapper_collage">
       <div className="collage">
@@ -25,13 +38,15 @@ const CollagePortfolio: React.FC = () => {
           <div
             key={index}
             className={`item ${index % 3 === 2 ? "wide" : ""} ${
-              index % 3 === 2 ? "tall" : ""
+              index % 4 === 1 ? "tall" : ""
             }`}
+            onClick={() => openModal(src)}
           >
             <img src={src} alt={`Image ${index + 1}`} />
           </div>
         ))}
       </div>
+      {selectedImage && <Modal src={selectedImage} closeModal={closeModal} />}
     </div>
   );
 };
